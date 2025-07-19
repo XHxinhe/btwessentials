@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.fabricmc.btwessentials.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "EntityPlayerMPHomeMixin",
+    "NBTTagCompoundMixin",
+    "NBTTagListMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
