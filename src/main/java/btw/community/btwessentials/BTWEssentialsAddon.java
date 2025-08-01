@@ -16,8 +16,8 @@ public class BTWEssentialsAddon extends BTWAddon {
 
         this.registerAddonCommand(new CommandBack());       // 返回死亡点
         this.registerAddonCommand(new CommandTpRequest());  // 请求传送
-        this.registerAddonCommand(new CommandTpAccept());   // 接受传送
-        this.registerAddonCommand(new CommandTpDeny());     // 拒绝传送
+//        this.registerAddonCommand(new CommandTpAccept());   // 接受传送
+//        this.registerAddonCommand(new CommandTpDeny());     // 拒绝传送
         this.registerAddonCommand(new CommandSetHome());    // 设置家
         this.registerAddonCommand(new CommandGoHome());     // 回家
         this.registerAddonCommand(new CommandListHome());   // 列出家园点

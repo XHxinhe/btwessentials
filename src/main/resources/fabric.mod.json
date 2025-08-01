@@ -19,7 +19,8 @@
       "net.fabricmc.btwessentials.BTWEssentials"
     ],
     "btw:addon": [
-      "btw.community.btwessentials.BTWEssentialsAddon"
+      "btw.community.btwessentials.BTWEssentialsAddon",
+      "net.fabricmc.btwessentials.addon.BackMeUpAddon"
     ]
   },
   "custom": {

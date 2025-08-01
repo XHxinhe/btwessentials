@@ -7,6 +7,8 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.src.CommandHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import net.fabricmc.btwessentials.command.CommandBack;
+import net.fabricmc.btwessentials.command.CommandTpRequest;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +40,14 @@ public class BTWEssentials implements ModInitializer {
 	}
 	public void setLastPosition(String playerName, double x, double y, double z, int dimension) {
 		lastPositions.put(playerName, new Pos(x, y, z, dimension));
+	}
+	/**
+	 * 设置玩家传送前的位置
+	 * @param playerName 玩家名
+	 * @param position 包含坐标和维度的 Pos 对象
+	 */
+	public void setLastPosition(String playerName, Pos position) {
+		lastPositions.put(playerName, position);
 	}
 
 	// 获取使用/home前的位置

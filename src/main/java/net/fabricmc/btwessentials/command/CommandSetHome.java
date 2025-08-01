@@ -41,8 +41,8 @@ public class CommandSetHome extends CommandBase {
 
             EntityPlayerMP player = getCommandSenderAsPlayer(sender);
 
-            if (((EntityPlayerMPAccessor)player).btwessentials$listHomeName().size() > 20) {
-                player.addChatMessage("最多设置20个家");
+            if (((EntityPlayerMPAccessor)player).btwessentials$listHomeName().size() > 40) {
+                player.addChatMessage("最多设置40个家");
             } else {
                 ((EntityPlayerMPAccessor)player).btwessentials$setHomePosition(
                         arguments[0],
@@ -51,7 +51,7 @@ public class CommandSetHome extends CommandBase {
                         player.posZ,
                         player.dimension
                 );
-                player.addChatMessage("设置家成功");
+                player.addChatMessage("§e设置家成功");
             }
         }
     }
