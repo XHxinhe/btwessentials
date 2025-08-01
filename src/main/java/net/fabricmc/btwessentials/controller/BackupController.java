@@ -68,7 +68,7 @@ public class BackupController {
 
         // 如果配置了通知，并且确实执行了备份，则在聊天框发送消息
         if (SingletonController.getConfigurationController().isNotificationEnabled()) {
-            Minecraft.getMinecraft().ingameGUI.getChatGUI().printChatMessage("§e成功备份");
+            Minecraft.getMinecraft().ingameGUI.getChatGUI().printChatMessage("§e已喝水");
         }
     }
 

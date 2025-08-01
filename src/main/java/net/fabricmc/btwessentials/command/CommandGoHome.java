@@ -66,7 +66,6 @@ public class CommandGoHome extends CommandBase {
         if (player.dimension != pos.dimension) {
             player.travelToDimension(pos.dimension);
         }
-
         player.playerNetServerHandler.setPlayerLocation(pos.x, pos.y, pos.z, 0.0F, 0.0F);
         player.addChatMessage("§a已传送回home点，使用 /back 可以返回之前的位置");
     }

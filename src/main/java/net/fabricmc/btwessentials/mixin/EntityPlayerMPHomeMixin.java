@@ -5,12 +5,7 @@ import net.fabricmc.btwessentials.api.EntityPlayerMPAccessor;
 import net.fabricmc.btwessentials.api.NBTTagCompoundAccessor;
 import net.fabricmc.btwessentials.api.NBTTagListAccesstor;
 import net.fabricmc.btwessentials.util.Pos;
-import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.EntityPlayerMP;
-import net.minecraft.src.NBTBase;
-import net.minecraft.src.NBTTagCompound;
-import net.minecraft.src.NBTTagInt;
-import net.minecraft.src.NBTTagList;
+import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -63,7 +58,6 @@ public class EntityPlayerMPHomeMixin implements EntityPlayerMPAccessor {
                 break;
             }
         }
-
         NBTTagCompound home = this.newHomeNBTList(name, posX, posY, posZ, dimension);
         this.playerHomeList.appendTag(home);
     }
@@ -85,9 +79,9 @@ public class EntityPlayerMPHomeMixin implements EntityPlayerMPAccessor {
                 Map.Entry<String, NBTBase> firstEntry = this.getMapEntry(this.playerHomeList.tagAt(i));
                 NBTTagList home = (NBTTagList)firstEntry.getValue();
                 return new Pos(
-                        ((NBTTagInt)home.tagAt(0)).data + 0.5,
+                        ((NBTTagInt)home.tagAt(0)).data ,
                         ((NBTTagInt)home.tagAt(1)).data,
-                        ((NBTTagInt)home.tagAt(2)).data + 0.5,
+                        ((NBTTagInt)home.tagAt(2)).data,
                         ((NBTTagInt)home.tagAt(3)).data
                 );
             }
@@ -126,10 +120,10 @@ public class EntityPlayerMPHomeMixin implements EntityPlayerMPAccessor {
     protected NBTTagCompound newHomeNBTList(String name, double x, double y, double z, int dimension) {
         NBTTagList nbtTagList = new NBTTagList();
         NBTTagCompound nbtTagCompound = new NBTTagCompound();
-        nbtTagList.appendTag(new NBTTagInt(null, (int)x));
-        nbtTagList.appendTag(new NBTTagInt(null, (int)y));
-        nbtTagList.appendTag(new NBTTagInt(null, (int)z));
-        nbtTagList.appendTag(new NBTTagInt(null, dimension));
+        nbtTagList.appendTag(new NBTTagDouble(null, x));
+        nbtTagList.appendTag(new NBTTagDouble(null, y));
+        nbtTagList.appendTag(new NBTTagDouble(null, z));
+        nbtTagList.appendTag(new NBTTagDouble(null, dimension));
         nbtTagCompound.setTag(name, nbtTagList);
         return nbtTagCompound;
     }
